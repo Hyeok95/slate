@@ -29,6 +29,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           publish_dir: ./build
-          publish_branch: gh-pages  # GitHub Pages에 배포할 브랜치 지정
+          publish_branch: gh-pages
