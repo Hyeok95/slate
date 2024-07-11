@@ -1,0 +1,692 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="../stylesheets/screen-9c19b03a.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all-024da600.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="includes includes_project1" data-languages="[&quot;shell&quot;,&quot;http&quot;,&quot;javascript&quot;,&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="../images/logo-1e815a84.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="http">http</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="python">python</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#project-1-api" class="toc-h1 toc-link" data-title="Project 1 # API 문서 관리">Project 1 # API 문서 관리</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#0-slate" class="toc-h2 toc-link" data-title="0. Slate 설치">0. Slate 설치</a>
+                  </li>
+                  <li>
+                    <a href="#1-api" class="toc-h2 toc-link" data-title="1. 질의 검색 API">1. 질의 검색 API</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/slatedocs/slate'>Slate on GitHub</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='project-1-api'>Project 1 # API 문서 관리</h1>
+<p><a href="/">Home</a></p>
+<h2 id='0-slate'>0. Slate 설치</h2>
+<p>Provided in the slate repo is a Dockerfile you can use to run slate using <a href="https://www.docker.com/">Docker</a>, as well as providing pre-built images on <a href="https://hub.docker.com/r/slatedocs/slate">Docker Hub</a>. Docker is similar to Vagrant in that it provides a reproducible, portable development environment using virtualization, however it does not provide a full VM, rather piggy backing off the host, allowing for a slimmer installation profile than Vagrant / full VMs. However, Docker does come with a number of its own terms, and for beginners, we recommend looking at
+<a href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/container-docker-introduction/docker-terminology">this Glossary</a>
+to familiarize yourself with some of them.</p>
+<h3 id='1-dependencies'>1) Dependencies</h3>
+<ul>
+<li><a href="https://www.docker.com/">Docker</a>, see <a href="https://www.docker.com/get-started">this page</a> for installing Docker Desktop.</li>
+</ul>
+<h3 id='2-getting-started'>2) Getting Started</h3>
+<ol>
+<li>Fork this repository on Github.</li>
+<li>Clone <em>your forked repository</em> (not our original one) to your hard drive with <code>git clone https://github.com/YOURUSERNAME/slate.git</code></li>
+<li><code>cd slate</code></li>
+<li>Grab the slate image (<code>docker pull slatedocs/slate</code>) or build the docker image for the repository (<code>docker build . -t slatedocs/slate</code>).</li>
+</ol>
+
+<p>Note: If you are using the pre-built images for Slate, you may wish to remove all files other than the <code>source</code> directory from your repository.</p>
+<h3 id='3-building-slate'>3) Building Slate</h3>
+<p>To use Docker to just build your site, run:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>docker run --rm --name slate -v $(pwd)/build:/srv/slate/build -v $(pwd)/source:/srv/slate/source slatedocs/slate build
+</code></pre></div>
+<p>After this command completes, you should see the built artifacts for your site in the <code>$(pwd)/build</code> directory, which you can then statically serve for your website.</p>
+
+<p><em>Note</em>: You may omit the final <code>build</code> argument and get the same result. By default, if given no command, the Dockerfile will run <code>build</code>.</p>
+<h3 id='4-running-slate'>4) Running Slate</h3>
+<p>If you wish to run the development server for Slate to aid in working on the site, run:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>docker run --rm --name slate -p 4567:4567 -v $(pwd)/source:/srv/slate/source slatedocs/slate serve
+</code></pre></div>
+<p>and you will be able to access your site at http://localhost:4567 until you stop the running container process.</p>
+<h3 id='5-advanced-usage'>5) Advanced Usage</h3>
+<p>The provided Docker images contain the full Slate environment and all related files. This means that you may
+provide as much or as little as you want into the container while utilizing defaults. For example, if you only
+wanted to include your markdown sources and not overwrite the default JS, CSS, etc. you may wish to use the
+following mount options:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>-v $(pwd)/source/index.html.md:/srv/slate/source/index.html.md -v $(pwd)/source/includes:/srv/slate/source/includes
+</code></pre></div><h2 id='1-api'>1. 질의 검색 API</h2><h3 id='1-1-api'>1.1 일반 질의 검색 API</h3><h3 id='1-api-2'>1) API 설명</h3>
+<ul>
+<li>질의에 대한 답변을 검색하는 API</li>
+<li>입력 창에 텍스트를 입력한 내용에 대해 질의 검색 시 사용한다.</li>
+</ul>
+<h3 id='2-api'>2) API 정보</h3>
+<table><thead>
+<tr>
+<th>구분</th>
+<th>설명</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>url</strong></td>
+<td><code>http://{API Gateway Server}/api/v1/talk/</code></td>
+</tr>
+<tr>
+<td><strong>Method</strong></td>
+<td><code>POST</code></td>
+</tr>
+<tr>
+<td><strong>Content Type</strong></td>
+<td><code>JSON</code></td>
+</tr>
+</tbody></table>
+<h3 id='3-api'>3) API 요청 파라미터</h3>
+<blockquote>
+<p>API 요청 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"chatbot_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9c771a76-4305-11ee-8119-4f7fd8f839bc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"session_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111a76-4305-11ee-8119-4f7fd8f839bc"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"회원가입 방법 알려줘"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TALK"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>파라미터</th>
+<th>타입</th>
+<th>필수</th>
+<th>설명</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>chatbot_id</td>
+<td>String</td>
+<td>Y</td>
+<td>챗봇 고유 id (10자리 이상) ex) <code>9c771a76-4305-11ee-8119-4f7fd8f839bc</code></td>
+</tr>
+<tr>
+<td>session_id</td>
+<td>String</td>
+<td>Y</td>
+<td>세션 ID ex) <code>9c771a76-4305-11ee-8119-4f7fd8f839bc</code></td>
+</tr>
+<tr>
+<td>data</td>
+<td>Object</td>
+<td>Y</td>
+<td>세부 요청 데이터</td>
+</tr>
+</tbody></table>
+<h3 id='4-api-object'>4) API 요청 Object 파라미터</h3>
+<table><thead>
+<tr>
+<th>파라미터</th>
+<th>타입</th>
+<th>필수</th>
+<th>설명</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>Y</td>
+<td>질의 내용</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>Y</td>
+<td>질의 유형 (질의 유형 코드 참조), 대문자로 작성, 예: <code>TALK</code></td>
+</tr>
+<tr>
+<td>service</td>
+<td>String</td>
+<td>N</td>
+<td>서비스 유형 (S : 실제 서비스, T: Test), 기본값 : <code>S</code>, 대문자로 작성</td>
+</tr>
+</tbody></table>
+<h3 id='5-api-type'>5) API 질의 유형(type) 코드</h3>
+<table><thead>
+<tr>
+<th>질의 유형 코드</th>
+<th>설명</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>TALK</td>
+<td>입력 창에 입력한 Text에 대한 검색</td>
+</tr>
+<tr>
+<td>WELCOME</td>
+<td>인사말 검색</td>
+</tr>
+<tr>
+<td>ANSWER</td>
+<td>intent_code를 통한 답변 검색</td>
+</tr>
+<tr>
+<td>SELECT</td>
+<td>여러 select item에서 사용자가 입력한 Text가 가장 유사한 항목에 대한 답변 검색</td>
+</tr>
+</tbody></table>
+<h3 id='6-api'>6) API 결과 파라미터</h3>
+<blockquote>
+<p>api 결과 예시</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contents"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"회원가입 방법 알려줘"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TALK"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"confidence"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.887777</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"intent_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"98"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"intent_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"회원가입"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"answers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"answer_content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"답변 내용 1"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"answer_content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"답변 내용 2"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>파라미터</th>
+<th>타입</th>
+<th>필수</th>
+<th>설명</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>Number</td>
+<td>Y</td>
+<td>결과 코드 (HTTP status code 체계와 동일) ex) 200</td>
+</tr>
+<tr>
+<td>result</td>
+<td>String</td>
+<td>Y</td>
+<td>API 실행 결과 (성공 : <code>success</code>, 실패 : <code>fail</code>)</td>
+</tr>
+<tr>
+<td>contents</td>
+<td>Object</td>
+<td>Y</td>
+<td>API 결과에 대한 세부 정보</td>
+</tr>
+</tbody></table>
+<h3 id='7-api-object'>7) API 성공 결과 Object 파라미터</h3>
+<table><thead>
+<tr>
+<th>파라미터</th>
+<th>타입</th>
+<th>필수</th>
+<th>설명</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>Y</td>
+<td>질의 내용</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>Y</td>
+<td>질의 유형 (질의 유형 코드 참조), 대문자로 작성</td>
+</tr>
+<tr>
+<td>confidence</td>
+<td>Number</td>
+<td>Y</td>
+<td>유사도 수치 ex) <code>0.8787292</code></td>
+</tr>
+<tr>
+<td>intent_code</td>
+<td>String</td>
+<td>Y</td>
+<td>대화 sequence number</td>
+</tr>
+<tr>
+<td>intent_name</td>
+<td>String</td>
+<td>Y</td>
+<td>대화명 ex) <code>회원가입</code></td>
+</tr>
+<tr>
+<td>total</td>
+<td>Number</td>
+<td>Y</td>
+<td>답변 수</td>
+</tr>
+<tr>
+<td>answers</td>
+<td>Array</td>
+<td>Y</td>
+<td>답변 Database에 저장된 답변 내용</td>
+</tr>
+</tbody></table>
+<h3 id='8-api-object'>8) API 실패 결과 Object 파라미터</h3>
+<blockquote>
+<p>api 요청 실패</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fail"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contents"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalidate parameter"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<table><thead>
+<tr>
+<th>파라미터</th>
+<th>타입</th>
+<th>필수</th>
+<th>설명</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>error</td>
+<td>String</td>
+<td>Y</td>
+<td>에러 세부 메시지</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<aside class="notice">
+This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+</aside>
+
+<p>The Kittn API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified kitten could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The kitten requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="http">http</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="python">python</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
